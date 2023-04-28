@@ -10,9 +10,7 @@ import { getServerSession } from 'next-auth';
 export default async function handle(req, res) {
   const { title, content } = req.body;
 
-  console.log('req: ', req);
   const session = await getSession({ req });
-  console.log('session: ', session);
 
   const result = await prisma.post.create({
     data: {
